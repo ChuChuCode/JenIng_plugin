@@ -47,8 +47,11 @@
 ![使用者填入](https://media.discordapp.net/attachments/726760885816918096/813363050768760832/unknown.png?width=725&height=406)
 
 請對剪映點右鍵，並開啟檔案位置，你會看到 C:\Users\<你的使用者名稱>\AppData\Local\JianyingPro
+
 打開 setting.dll 將使用者填入 App_path 後面的<User_Name>    Ex: App_path=C:\Users\Chu\AppData\Local\JianyingPro
+
 而下面 export_path 則是你希望 .srt 輸出的位置  Ex: 放到桌面  export_path=C:\Users\zero7\Desktop
+
 **記住=後面不要有空格**
 
 ![開始！]()
