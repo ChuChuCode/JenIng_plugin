@@ -8,6 +8,7 @@
 所以就有了「輸出 .srt」 的想法
 
 [載點](http://www.mediafire.com/file/rg1nigy5qu0186v/JenIng_plugin.zip/file)
+
 可能會被防毒擋下，但請安心地讓他允許吧
 
 這是初步版本 未來會加上UI 讓他更 Fansy 一點  載點
