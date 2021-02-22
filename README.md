@@ -9,7 +9,7 @@
 
 [載點](http://www.mediafire.com/file/rg1nigy5qu0186v/JenIng_plugin.zip/file)
 
-可能會被防毒擋下，但請安心地讓他允許吧
+可能會被防毒擋下，正在找辦法解決...但請安心地讓他允許下載吧！
 
 這是初步版本 未來會加上UI 讓他更 Fansy 一點  載點
 
