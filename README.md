@@ -72,3 +72,7 @@ srt檔 就會直接儲存到現在這個資料夾(JianyingPro)裡
 這部分會在接下來的版本去做調整(應該會做成UI版本)
 
 還請大家敬請期待！
+
+PS...宣傳請附上
+
+朱朱ChuChu Github https://github.com/ChuChuCode/JenIng_plugin
