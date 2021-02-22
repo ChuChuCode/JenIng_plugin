@@ -26,3 +26,5 @@ Start.bat - 顧名思義就是開始執行的bat檔
 -->程式會生出n隻 *.srt 檔
 這部分會在接下來的版本去做調整(應該會做成UI版本)
 還請大家敬請期待
+
+詳細可以到 https://github.com/ChuChuCode/JenIng_plugin/blob/master/README.md 找到圖文教學
