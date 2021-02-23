@@ -1,11 +1,13 @@
 # JenIng_plugin
 
 ***************************************************
-* 歡迎使用 剪映的提取字幕小工具   我是[朱朱ChuChu](https://www.facebook.com/ChuChuStreaming)  *
+* 歡迎使用 剪映的提取字幕小工具   我是[朱朱ChuChu](https://www.facebook.com/ChuChuStreaming) 
 ***************************************************
-此工具主要用來針對[剪映(點我下載)](https://lv.ulikecam.com/)所使用的小工具
-剪映內建字幕生成，但不見得大家都喜歡他們的介面和字體模板
-所以就有了「輸出 .srt」 的想法
+此工具主要用來針對[剪映(點我下載)](https://lv.ulikecam.com/)所使用的小工具  剪映內建字幕生成 
+
+但不見得大家都喜歡他們的介面和字體模板，所以就有了「輸出 .srt」 的想法
+
+約莫花了兩天把這東西做出來
 
 [載點](http://www.mediafire.com/file/rg1nigy5qu0186v/JenIng_plugin.zip/file)
 
