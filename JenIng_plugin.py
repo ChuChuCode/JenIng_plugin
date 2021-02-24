@@ -1,9 +1,10 @@
 # -*- coding: utf-8 -*- 
 import json
-#import os
+import os
 import subprocess
 from opencc import OpenCC
 from pathlib import Path
+import traceback  
 
 # https://github.com/BYVoid/OpenCC
 converter = OpenCC('s2t')
@@ -17,33 +18,36 @@ def check_0(str,n):
     return s
 
 try:
-    #file_path = os.getcwd()
+    file_path = os.getcwd()
     
-    p = subprocess.Popen("cd", stdout=subprocess.PIPE, stderr=None, shell=True)
-    file_path = p.communicate()[0].decode("utf-8")[:-2]
+    #p = subprocess.Popen("cd", stdout=subprocess.PIPE, stderr=None, shell=True)
+    #file_path = p.communicate()[0].encoding("utf-8")[:-2]
     #print(file_path)
     #text = input('Press Enter')
 
     #Read setting.dll
-    with open("setting.dll",'r') as setting :
+    with open("setting.dll",'r',encoding="utf-8") as setting :
         for se in setting:
             if 'App_path' in se:
                 app_path = se.split("=")[1].split("\n")[0]
             elif 'export_path' in se:
                 ex_path = se.split("=")[1].split("\n")[0]
+    #get application path
     app_path = app_path + r"\User Data\Projects\com.lveditor.draft"
     #os.chdir(r'{}'.format(app_path))
-
-    input_file = open(app_path + '\\'+'root_draft_meta_info.json')
+    
+    #read json
+    input_file = open(app_path + r'\root_draft_meta_info.json','r',encoding="utf-8")
     json_array = json.load(input_file)
 
     for i in json_array['all_draft_store']:
         file_name =  i['draft_name']
-        path1 = app_path + '\\' +  i["draft_id"]
+        path1 = app_path + r'\\' +  i["draft_id"]
         my_file = Path(path1+r'\draft.json')
         if my_file.is_file():
-        
-            input_file = open (path1+r'\draft.json' ,encoding="utf-8")
+            
+            #reaad name of project
+            input_file = open (path1+r'\draft.json' ,'r',encoding="utf-8")
             lyrics = json.load(input_file)
             time={}
 
@@ -64,7 +68,7 @@ try:
                 
             if ex_path == "" :
                 ex_path = file_path
-            with open(ex_path + '\\' + file_name + '.srt',"w",encoding="utf-8") as f:
+            with open(ex_path + r'\\' + file_name + r'.srt',"w",encoding="utf-8") as f:
                 for i in time:
                     if num != 1:
                         f.write("\n")
@@ -74,4 +78,4 @@ try:
                     num = num + 1
             print("Generate {}.srt".format(file_name))
 except Exception as e :
-    print(e)
+    traceback.print_exc()  
