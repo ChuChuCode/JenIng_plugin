@@ -9,7 +9,7 @@
 
 這次終於有了UI版本了(灑花
 
-[載點](https://www.mediafire.com/file/in5d37eaw0qt7mo/JenIng_plugin_UI.zip/file)
+[載點](https://github.com/ChuChuCode/JenIng_plugin/releases/tag/1.0)
 
 
 ***教學***
