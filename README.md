@@ -9,7 +9,7 @@
 
 約莫花了兩天把這東西做出來
 
-[載點](http://www.mediafire.com/file/rg1nigy5qu0186v/JenIng_plugin.zip/file)
+[載點](https://github.com/ChuChuCode/JenIng_plugin/releases/tag/1.0)
 
 可能會被防毒擋下，正在找辦法解決...但請安心地讓他允許下載吧！
 
