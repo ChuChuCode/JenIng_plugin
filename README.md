@@ -1,4 +1,4 @@
-# JenIng_plugin
+# JenIng_plugin(舊版載點失效)
 
 ***************************************************
 * 歡迎使用 剪映的提取字幕小工具   我是[朱朱ChuChu](https://www.facebook.com/ChuChuStreaming) 
@@ -9,7 +9,7 @@
 
 約莫花了兩天把這東西做出來
 
-[載點](https://github.com/ChuChuCode/JenIng_plugin/releases/tag/1.0)
+[載點]()
 
 可能會被防毒擋下，正在找辦法解決...但請安心地讓他允許下載吧！
 
