@@ -1,4 +1,4 @@
-# JenIng_plugin
+# JenIng_plugin(UI)
 
 ***************************************************
 * 歡迎使用 剪映的提取字幕小工具   我是[朱朱ChuChu](https://www.facebook.com/ChuChuStreaming) 
