@@ -3,6 +3,7 @@ from tkinter.filedialog import askdirectory
 import os
 import JenIng_plugin as Jp
 import traceback  
+import configparser
 
 #Parameter
 app_path_str,save_path_str ="",""
@@ -12,12 +13,11 @@ do_list =[] #給輸出用
 
 def init():
     global app_path_str,save_path_str
-    with open("setting.dll",'r',encoding="utf-8") as setting :
-        for se in setting:
-            if 'App_path' in se:
-                app_path_str = se.split("=")[1].split("\n")[0]
-            elif 'Save_path' in se:
-                save_path_str = se.split("=")[1].split("\n")[0]
+    config = configparser.ConfigParser()
+    config.read('setting.dll')
+    
+    app_path_str = config["Directory"]["App_path"]
+    save_path_str = config["Directory"]["Save_path"]
     return app_path_str,save_path_str
     
 # Open GUI

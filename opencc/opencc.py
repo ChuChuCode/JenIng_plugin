@@ -33,7 +33,7 @@ DICT_DIR = 'dictionary'
 
 
 class OpenCC:
-    def __init__(self, conversion=None):
+    def __init__(self, conversion=None,directory=None):
         """
         init OpenCC
         :param conversion: the conversion of usage, options are
@@ -47,6 +47,7 @@ class OpenCC:
         self._dict_chain = list()
         self._dict_chain_data = list()
         self.dict_cache = dict()
+        self.directory = os.path.join(directory,"opencc")
         # List of sentence separators from OpenCC PhraseExtract.cpp. None of these separators are allowed as
         # part of a dictionary entry
         self.split_chars_re = re.compile(
@@ -102,7 +103,7 @@ class OpenCC:
 
         self._dict_chain = []
         config = self.conversion + '.json'
-        config_file = os.path.join(os.path.dirname(__file__), CONFIG_DIR, config)
+        config_file = os.path.join(self.directory, CONFIG_DIR, config)
         with open(config_file) as f:
             setting_json = json.load(f)
 
@@ -160,7 +161,7 @@ class OpenCC:
             dict_chain.append(chain)
         elif dict_dict.get('type') == 'txt':
             filename = dict_dict.get('file')
-            dict_file = os.path.join(os.path.dirname(__file__), DICT_DIR, filename)
+            dict_file = os.path.join(self.directory, DICT_DIR, filename)
             dict_chain.append(dict_file)
 
     def set_conversion(self, conversion):

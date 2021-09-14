@@ -19,7 +19,7 @@ def check_0(str,n):
 
 def get_project_list(path):
     #check is path
-    path = path + r"/User Data/Projects/com.lveditor.draft" 
+    path = path + r"\User Data\Projects\com.lveditor.draft" 
     input_file = open(path + r'/root_draft_meta_info.json','r',encoding="utf-8")
     json_array = json.load(input_file)
     project_list =[]
@@ -28,13 +28,13 @@ def get_project_list(path):
     return project_list, path
 
 def generate_srt(gen_list,path,save_path):
-    converter = OpenCC('s2tw')
+    converter = OpenCC('s2tw',os.getcwd())
     for project in gen_list:
-        path1 = path + r'\\' + project[1]
-        my_file = Path( path1 +r'\draft.json')
+        path1 = os.path.join(path ,project[0])
+        my_file = Path( path1 +r'\draft_content.json')
         if my_file.is_file():
             #reaad name of project
-            input_file = open (path1+r'\draft.json' ,'r',encoding="utf-8")
+            input_file = open (path1+ r'\draft_content.json' ,'r',encoding="utf-8")
             lyrics = json.load(input_file)
             time={}
 
@@ -46,19 +46,20 @@ def generate_srt(gen_list,path,save_path):
                 id = i['material_id']
                 sta = i['target_timerange']['start']//1000
                 dur = i['target_timerange']['duration']//1000
-                end = sta+ dur  
-                            
+                end = sta + dur  
+                     
                 time[id].append(check_0(str(sta//3600//1000),2)+':'+check_0(str(sta//1000//60%60),2) +':' + check_0(str(sta//1000%60),2)+','+check_0(str(sta%1000),3))
                 time[id].append(check_0(str(end//3600//1000),2)+':'+check_0(str(end//1000//60%60),2) +':' + check_0(str(end//1000%60),2)+','+check_0(str(end%1000),3))
 
             num = 1  
-            with open(save_path + r'\\' + project[0] + r'.srt',"w",encoding="utf-8") as f:
+            with open(os.path.join(save_path,project[0]) + r'.srt',"w",encoding="utf-8") as f:
                 for i in time:
                     if num != 1:
                         f.write("\n")
                     f.write(str(num)+"\n")
                     f.write(time[i][1] +' --> '+time[i][2]+"\n")
                     f.write(time[i][0]+"\n")
+                    print(time[i][0])
                     num = num + 1
             print("Generate {}.srt".format(project[0]))
 
@@ -83,8 +84,8 @@ if __name__ == "__main__":
         #os.chdir(r'{}'.format(app_path))
         
         #read json
-        input_file = open(app_path + r'\root_draft_meta_info.json','r',encoding="utf-8")
-        json_array = json.load(input_file)
+        with open( os.path.join(app_path ,r'\root_draft_meta_info.json'),encoding="utf-8") as f :
+            json_array = json.load(f)
 
         for i in json_array['all_draft_store']:
             file_name =  i['draft_name']  #檔案名稱(吐給UI)
