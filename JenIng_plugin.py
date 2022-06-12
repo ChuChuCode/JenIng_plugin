@@ -8,7 +8,7 @@ import traceback
 
 # https://github.com/BYVoid/OpenCC
 
-
+# Check if time is less then 10 -> add 0 
 def check_0(str,n):
     s  = ""
     if len(str) < n:
@@ -16,6 +16,7 @@ def check_0(str,n):
             s = s + "0"
     s = s + str
     return s
+
 
 def get_project_list(path):
     #check is path

@@ -6,13 +6,14 @@ import traceback
 import configparser
 
 #Parameter
+global app_path_str,save_path_str
 app_path_str,save_path_str ="",""
 project_list = [] #存入當前 Project 和 ID
 radio_btn1 = []  #Radio Button list
 do_list =[] #給輸出用
 
+ # Get *.dll params
 def init():
-    global app_path_str,save_path_str
     config = configparser.ConfigParser()
     config.read('setting.dll')
     
@@ -31,7 +32,6 @@ def init():
 # 建立事件處理函式（event handler），透過元件 command 參數存取
 def Create_Radio_Button(path):
     #獲取 Project List
-    global project_list,file_path
     project_list, file_path = Jp.get_project_list(path)
     
     # 建立 Radio Button
@@ -44,16 +44,15 @@ def Create_Radio_Button(path):
                 temp.grid(row = row,column=line)
                 #radio_btn1.append(temp_var)
                 radio_btn1.append([temp_var,temp])
-                
+
+# Set App Path           
 def set_app_path():
-    global app_path_str
     app_path_str = askdirectory(initialdir=os.getcwd())
     app_path.set('剪映檔案位置 :' + app_path_str)
     Create_Radio_Button(app_path_str)
     
-    
+# Set Save Path
 def set_save_path():
-    global save_path_str
     save_path_str = askdirectory(initialdir=os.getcwd()) 
     save_path.set('輸出檔案位置 :' + save_path_str)
   
